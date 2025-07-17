@@ -4,6 +4,8 @@ import { gsap } from 'gsap'
 const Preloader = () => {
   useEffect(() => {
     const svg = document.getElementById("preloaderSvg")
+    if (!svg) return
+
     const tl = gsap.timeline()
     const curve = "M0 502S175 272 500 272s500 230 500 230V0H0Z"
     const flat = "M0 2S175 1 500 1s500 1 500 1V0H0Z"

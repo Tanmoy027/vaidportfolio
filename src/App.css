@@ -1,309 +1,173 @@
-/* Import all the original CSS files */
-@import url('./assets/css/bootstrap.min.css');
-@import url('./assets/css/font-awesome-pro.css');
-@import url('./assets/fonts/remixicon.css');
-@import url('./assets/css/magnific-popup.css');
-@import url('./assets/css/nice-select.min.css');
-@import url('./assets/css/animate.min.css');
-@import url('./assets/css/mobilemenu.css');
-@import url('./assets/css/slick.min.css');
-@import url('./assets/css/spacing.css');
-@import url('./assets/css/style.css');
-@import url('./assets/css/responsive.css');
+/* Additional styles specific to React components */
+.App {
+  width: 100%;
+  min-height: 100vh;
+}
 
-/* Custom styles from original style.css */
-* {
-  margin: 0;
-  padding: 0;
+/* Ensure proper styling for React components */
+.react-component {
+  width: 100%;
+}
+
+/* Custom cursor styles */
+#magic-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+#ball {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background: #E04B18;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition: transform 0.1s ease-out;
+}
+
+#ball.hovered {
+  transform: scale(2);
+  opacity: 0.5;
+}
+
+/* Progress wrap styles */
+.progress-wrap {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  height: 46px;
+  width: 46px;
+  cursor: pointer;
+  display: block;
+  border-radius: 50px;
+  box-shadow: inset 0 0 0 2px rgba(255,255,255,0.2);
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: all 200ms linear;
+}
+
+.progress-wrap.active-progress {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.progress-wrap::after {
+  position: absolute;
+  font-family: 'remixicon';
+  content: '\ea4c';
+  text-align: center;
+  line-height: 46px;
+  font-size: 24px;
+  color: #E04B18;
+  left: 0;
+  top: 0;
+  height: 46px;
+  width: 46px;
+  cursor: pointer;
+  display: block;
+  z-index: 1;
+  transition: all 200ms linear;
+}
+
+.progress-wrap:hover::after {
+  opacity: 0;
+}
+
+.progress-wrap::before {
+  position: absolute;
+  font-family: 'remixicon';
+  content: '\ea4c';
+  text-align: center;
+  line-height: 46px;
+  font-size: 24px;
+  opacity: 0;
+  background-image: linear-gradient(298deg, #E04B18, #E04B18);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  left: 0;
+  top: 0;
+  height: 46px;
+  width: 46px;
+  cursor: pointer;
+  display: block;
+  z-index: 2;
+  transition: all 200ms linear;
+}
+
+.progress-wrap:hover::before {
+  opacity: 1;
+}
+
+.progress-circle path {
+  stroke: #E04B18;
+  stroke-width: 4;
   box-sizing: border-box;
-  text-decoration: none;
+  transition: all 200ms linear;
 }
 
-:root {
-  --primary-color: #222;
-  --secondary-color: #FF422E;
-  --background-color: rgb(230, 234, 238);
-  --text-color: #222;
+/* Preloader styles */
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-body {
-  font-family: "Poppins", sans-serif;
-  line-height: 1.6;
-  color: var(--text-color);
-  background-color: black;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px; 
-}
-
-/* Logos animation */
-@keyframes slide {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
-
-.logos h2{
-  font-size: 32px;
-  padding-top: 0px ;
-}
-
-.logos {
-  color: #ccc;
-  overflow: hidden;
-  padding: 100px 0;
-  background: black;
-  white-space: nowrap;
-  position: relative;
-}
-
-.logos:before,
-.logos:after {
+.preloader svg {
   position: absolute;
   top: 0;
-  width: 250px;
-  height: 100%;
-  content: "";
-  z-index: 2;
-}
-
-.logos:before {
-  left: 0;
-  background: linear-gradient(to left, rgba(255, 255, 255, 0), black);
-}
-
-.logos:after {
-  right: 0;
-  background: linear-gradient(to right, rgba(255, 255, 255, 0), black);
-}
-
-.logos-slide {
-  display: inline-block;
-  width: max-content;
-  animation: 55s slide infinite linear;
-}
-
-.logos-slide img {
-  margin: 0 100px;
-}
-
-.logos-slide .kitab{height: 80px;}
-.logos-slide .afsin{height: 50px;}
-.logos-slide .LogoW{height: 40px;}
-.logos-slide .marchbid{height: 40px;}
-.logos-slide .Asset_1 {height: 40px;}
-.logos-slide .Asset_2{height: 30px;}
-
-/* Recent works section */
-.recentworks {
-  text-align: center;
-}
-
-.works h2{
-  text-decoration: underline;
-}
-
-.works a{
-  margin: 40px 0px;
-  transition: .5s;
-}
-
-.works a:hover {
-  background: #E04B18;
-  color: #000;
-  box-shadow: 0 0 5px #E04B18,
-  0 0 5px #E04B18,
-  0 0 5px #E04B18,
-  0 0 5px #E04B18;
-}
-
-.work-container {
-  display: flex;
-  justify-content: space-evenly;
-  gap: 20px;
-  padding: 20px;
-  flex-wrap: wrap;
-}
-
-.works {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.works h2{
-  color: white;
-}
-
-.tshirt-item img,
-.logo-item img,
-.video-item video {
   width: 100%;
   height: 100%;
-  border-radius: 8px;
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  fill: #E04B18;
 }
 
-.tshirt-item,
-.video-item,
-.logo-item {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  background-color: #252525;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  padding: 0px;
-  box-sizing: border-box;
-  border-radius: 8px;
-  padding-bottom: 0px;
-}
-
-.product-item{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 5px;
-}
-
-.item-price {
-  margin-top: 5px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #fdf8f8; 
-}
-
-/* Video section */
-.video-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 100px 20px;
-  background-color: #F4F3ED;
-}
-
-.video-wrapper {
-  width: 100%;
-  max-width: 960px;
-  aspect-ratio: 2 / 1;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  border-radius: 12px;
-  overflow: hidden;
-  background-color: #000;
-}
-
-.video-wrapper video {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-}
-
-/* Blog section */
-.blog-section {
+.preloader-heading {
   position: relative;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: #f9f9f9;
-  padding: 30px;
-  overflow: hidden;
-}
-
-.blog-carousel-wrapper {
-  overflow: hidden;
-  max-width: 1500px;
-  margin: 0 auto;
-  width: 100%;
-}
-
-.blog-carousel {
-  display: flex;
-  gap: 20px;
-  transition: transform 0.4s ease-in-out;
-}
-
-.blog-card {
-  min-width: 300px;
-  flex: 0 0 auto;
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  text-align: center;
-  font-weight: bold;
-}
-
-.nav-btn {
-  background: #333;
-  color: #fff;
-  border: none;
-  padding: 10px 15px;
-  font-size: 20px;
-  border-radius: 50%;
-  cursor: pointer;
   z-index: 2;
+  text-align: center;
 }
 
-.nav-btn:hover {
-  background: #555;
+.load-text {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.2em;
 }
 
-/* Footer */
-.site-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: black;
-  color: white;
-  padding: 20px 40px;
-  flex-wrap: wrap;
+.load-text span {
+  display: inline-block;
+  animation: wave 1.5s ease-in-out infinite;
 }
 
-.footer-left,
-.footer-right {
-  padding: 55px;
-  display: flex;
-  gap: 20px;
-}
+.load-text span:nth-child(1) { animation-delay: 0.1s; }
+.load-text span:nth-child(2) { animation-delay: 0.2s; }
+.load-text span:nth-child(3) { animation-delay: 0.3s; }
+.load-text span:nth-child(4) { animation-delay: 0.4s; }
+.load-text span:nth-child(5) { animation-delay: 0.5s; }
+.load-text span:nth-child(6) { animation-delay: 0.6s; }
+.load-text span:nth-child(7) { animation-delay: 0.7s; }
 
-.footer-right{
-  font-size: 55px;
-}
-
-.social-link,
-.contact-link {
-  font-family: "Oswald", sans-serif;
-  color: #E04B18;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
-  text-transform: uppercase;
-}
-
-.social-link:hover,
-.contact-link:hover {
-  color: #00bfff;
-}
-
-/* Responsive */
-@media (max-width: 992px) {
-  .blog-card {
-    min-width: 250px;
+@keyframes wave {
+  0%, 60%, 100% {
+    transform: initial;
   }
-}
-
-@media (max-width: 768px) {
-  .blog-card {
-    min-width: 200px;
+  30% {
+    transform: translateY(-15px);
   }
 }

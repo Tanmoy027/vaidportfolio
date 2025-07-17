@@ -108,6 +108,15 @@ const Home = () => {
     }
   }, [])
 
+  useEffect(() => {
+    // Copy logos slide for infinite animation
+    const logosSlide = document.querySelector('.logos-slide')
+    if (logosSlide && logosSlide.parentNode) {
+      const copy = logosSlide.cloneNode(true)
+      logosSlide.parentNode.appendChild(copy)
+    }
+  }, [])
+
   return (
     <>
       <Preloader />
@@ -167,15 +176,6 @@ const Home = () => {
       {/* Work with section */}
       <section id="work-with" className="work-with">
         <div className="logos">
-          <div className="logos-slide">
-            <img src="/company/afsin.png" alt="" className="afsin" />
-            <img src="/company/kitab.png" alt="" className="kitab" />
-            <img src="/company/LogoW.png" alt="" className="LogoW" />
-            <img src="/company/marchbid.png" alt="" className="marchbid" />
-            <img src="/company/Asset 1.png" alt="" className="Asset_1" />
-            <img src="/company/Asset 2.png" alt="" className="Asset_2" />
-          </div>
-
           <div className="logos-slide">
             <img src="/company/afsin.png" alt="" className="afsin" />
             <img src="/company/kitab.png" alt="" className="kitab" />
