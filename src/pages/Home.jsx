@@ -63,14 +63,14 @@ const Home = () => {
   }, [])
 
   useEffect(() => {
-    // Blog carousel functionality
+    // Modern Blog carousel functionality
     const carousel = carouselRef.current
     if (!carousel) return
 
-    const cards = carousel.querySelectorAll('.blog-card')
-    const visibleCards = 3
+    const cards = carousel.querySelectorAll('.modern-blog-card')
+    const visibleCards = 2
     const totalCards = cards.length
-    const cardWidth = cards[0]?.offsetWidth + 20 || 320
+    const cardWidth = cards[0]?.offsetWidth + 20 || 420
 
     const updateCarousel = () => {
       const maxIndex = totalCards - visibleCards
@@ -89,8 +89,8 @@ const Home = () => {
       updateCarousel()
     }
 
-    const rightBtn = document.querySelector('.right-btn')
-    const leftBtn = document.querySelector('.left-btn')
+    const rightBtn = document.querySelector('.blog-next')
+    const leftBtn = document.querySelector('.blog-prev')
 
     if (rightBtn) rightBtn.addEventListener('click', handleRightClick)
     if (leftBtn) leftBtn.addEventListener('click', handleLeftClick)
@@ -128,7 +128,7 @@ const Home = () => {
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
-              <div className="hero-content wow fadeInUp text-center delay-0-2s">
+              <div className="hero-content wow fadeInUp text-center delay-0-2s" style={{background: 'transparent'}}>
                 <h2>visual marketer</h2>
               </div>
             </div>
@@ -401,6 +401,84 @@ const Home = () => {
         </div>
 
         <button className="nav-btn right-btn">→</button>
+      </section>
+
+      {/* New Modern Blog Section */}
+      <section className="modern-blog-section">
+        <div className="blog-container">
+          <div className="blog-navigation">
+            <div className="blog-nav-dots">
+              <div className="blog-dot active"></div>
+              <div className="blog-dot"></div>
+              <div className="blog-dot"></div>
+              <div className="blog-dot"></div>
+            </div>
+            <div className="blog-nav-arrows">
+              <div className="blog-arrow blog-prev">←</div>
+              <div className="blog-arrow blog-next">→</div>
+            </div>
+          </div>
+          
+          <div className="blog-cards-container">
+            <div className="blog-cards-wrapper" ref={carouselRef}>
+              <div className="modern-blog-card">
+                <div className="blog-card-image" style={{backgroundImage: 'url(https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80)'}}>
+                  <div className="blog-card-overlay">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Author" className="blog-card-avatar" />
+                    <div className="blog-card-author">
+                      <h4>SANY GIRI</h4>
+                    </div>
+                  </div>
+                </div>
+                <div className="blog-card-content">
+                  <p>LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT, SED DIAM NONUMMY NIBH EUISMOD TINCIDUNT UT LAOREET DOLORE MAGNA ALIQUAM ERAT VOLUTPAT. UT WISI ENIM AD MINIM VENIAM, QUIS NOSTRUD EXERCI TATION ULLAMCORPER SUSCIPIT LOBORTIS NISL UT ALIQUIP EX EA COMMODO CONSEQUAT.</p>
+                </div>
+              </div>
+              
+              <div className="modern-blog-card">
+                <div className="blog-card-image" style={{backgroundImage: 'url(https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80)'}}>
+                  <div className="blog-card-overlay">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Author" className="blog-card-avatar" />
+                    <div className="blog-card-author">
+                      <h4>PETUK COUPLE</h4>
+                    </div>
+                  </div>
+                </div>
+                <div className="blog-card-content">
+                  <p>LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT, SED DIAM NONUMMY NIBH EUISMOD TINCIDUNT UT LAOREET DOLORE MAGNA ALIQUAM ERAT VOLUTPAT. UT WISI ENIM AD MINIM VENIAM, QUIS NOSTRUD EXERCI TATION ULLAMCORPER SUSCIPIT LOBORTIS NISL UT ALIQUIP EX EA COMMODO CONSEQUAT.</p>
+                </div>
+              </div>
+              
+              <div className="modern-blog-card">
+                <div className="blog-card-image" style={{backgroundImage: 'url(https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80)'}}>
+                  <div className="blog-card-overlay">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Author" className="blog-card-avatar" />
+                    <div className="blog-card-author">
+                      <h4>MARIA SMITH</h4>
+                    </div>
+                  </div>
+                </div>
+                <div className="blog-card-content">
+                  <p>LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT, SED DIAM NONUMMY NIBH EUISMOD TINCIDUNT UT LAOREET DOLORE MAGNA ALIQUAM ERAT VOLUTPAT. UT WISI ENIM AD MINIM VENIAM, QUIS NOSTRUD EXERCI TATION ULLAMCORPER SUSCIPIT LOBORTIS NISL UT ALIQUIP EX EA COMMODO CONSEQUAT.</p>
+                </div>
+              </div>
+              
+              <div className="modern-blog-card">
+                <div className="blog-card-image" style={{backgroundImage: 'url(https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80)'}}>
+                  <div className="blog-card-overlay">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Author" className="blog-card-avatar" />
+                    <div className="blog-card-author">
+                      <h4>JOHN DOE</h4>
+                    </div>
+                  </div>
+                </div>
+                <div className="blog-card-content">
+                  <p>LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT, SED DIAM NONUMMY NIBH EUISMOD TINCIDUNT UT LAOREET DOLORE MAGNA ALIQUAM ERAT VOLUTPAT. UT WISI ENIM AD MINIM VENIAM, QUIS NOSTRUD EXERCI TATION ULLAMCORPER SUSCIPIT LOBORTIS NISL UT ALIQUIP EX EA COMMODO CONSEQUAT.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <Footer />
