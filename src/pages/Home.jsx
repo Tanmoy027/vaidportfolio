@@ -422,7 +422,7 @@ const Home = () => {
           <div className="blog-cards-container">
             <div className="blog-cards-wrapper" ref={carouselRef}>
               <div className="modern-blog-card">
-                <div className="blog-card-image" style={{backgroundImage: 'url(https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80)'}}>
+                <div className="blog-card-image" style={{backgroundImage: 'url(https://images.unsplash.com/photo-1464822759844-d150baec4ba5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80)'}}>
                   <div className="blog-card-overlay">
                     <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Author" className="blog-card-avatar" />
                     <div className="blog-card-author">
@@ -436,7 +436,7 @@ const Home = () => {
               </div>
               
               <div className="modern-blog-card">
-                <div className="blog-card-image" style={{backgroundImage: 'url(https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80)'}}>
+                <div className="blog-card-image" style={{backgroundImage: 'url(https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80)'}}>
                   <div className="blog-card-overlay">
                     <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Author" className="blog-card-avatar" />
                     <div className="blog-card-author">
@@ -450,11 +450,11 @@ const Home = () => {
               </div>
               
               <div className="modern-blog-card">
-                <div className="blog-card-image" style={{backgroundImage: 'url(https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80)'}}>
+                <div className="blog-card-image" style={{backgroundImage: 'url(https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80)'}}>
                   <div className="blog-card-overlay">
                     <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Author" className="blog-card-avatar" />
                     <div className="blog-card-author">
-                      <h4>MARIA SMITH</h4>
+                      <h4>MALDIV COUPLE</h4>
                     </div>
                   </div>
                 </div>
